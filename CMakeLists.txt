@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.1)
+project(Astar)
+
+SET("OpenCV_DIR" "/home/jin/Third_Party_Packages/opencv-3.4.2/build")
+FIND_PACKAGE( OpenCV REQUIRED )
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+set(SOURCE_FILES main.cpp)
+add_executable(Astar ${SOURCE_FILES})
+target_link_libraries(Astar ${OpenCV_LIBS})
